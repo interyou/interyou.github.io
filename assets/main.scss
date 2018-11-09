@@ -41,10 +41,23 @@
 .tabcontent {
     border-radius: 0 .25em .25em .25em;
     display: none;
-    padding: 2px 12px;
+    padding: 10px;
     background-color: #f1f1f1;
+    margin-bottom: 15px;
 }
 
 .tablinks {
     color: #888;
+}
+
+figure {
+    margin-bottom: 0 !important;
+}
+
+.highlight {
+    margin-bottom: 0 !important;
+}
+
+pre {
+    margin-bottom: 0 !important;
 }

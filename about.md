@@ -1,18 +1,16 @@
 ---
 layout: page
-title: About
+title: О проекте
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+InterYou - блог, который поможет тебе подготовиться к техническим собеседованиям на позицию мобильного разработчика. 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Основные темы постов:
+  * Задачи с собеседований с примерами кода на Swift и Kotlin
+  * Вопросы с собседований на алгоритмы, структуры данных и SDK.
+  * Небольшие обзоры современных фреймворках
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Подписывайтесь на наш канал в [телеграмме](https://www.t.me/interyou), чтобы всегда быть в курсе новых постов!
 
-
-[jekyll-organization]: https://github.com/jekyll
+Основатели: [Якупов Булат](https://www.linkedin.com/in/bulat-yakupov-802790125/) и [Александр Бородин]()

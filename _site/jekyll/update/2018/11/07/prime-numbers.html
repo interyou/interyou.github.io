@@ -3,9 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Prime numbers | Interyou</title>
+<title>Задача о представлении числа в виде суммы двух простых чисел | Interyou</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Prime numbers" />
+<meta property="og:title" content="Задача о представлении числа в виде суммы двух простых чисел" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:" />
 <meta property="og:description" content="Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:" />
@@ -15,7 +15,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-11-07T12:00:00+03:00" />
 <script type="application/ld+json">
-{"description":"Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html","headline":"Prime numbers","dateModified":"2018-11-07T12:00:00+03:00","datePublished":"2018-11-07T12:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html"},"@context":"http://schema.org"}</script>
+{"description":"Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html","headline":"Задача о представлении числа в виде суммы двух простых чисел","dateModified":"2018-11-07T12:00:00+03:00","datePublished":"2018-11-07T12:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Interyou" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
@@ -51,7 +51,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">О проекте</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -59,7 +59,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
     
     <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">Prime numbers</h1>
+        <h1 class="post-title p-name" itemprop="name headline">Задача о представлении числа в виде суммы двух простых чисел</h1>
         <p class="post-meta">
         <time class="dt-published" datetime="2018-11-07T12:00:00+03:00" itemprop="datePublished">Nov 7, 2018
         </time></p>
@@ -70,8 +70,8 @@
 <p>Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает   <code class="highlighter-rouge">true</code>  или   <code class="highlighter-rouge">false</code>  в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:</p>
 
 <div class="tab">
-<button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
-<button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
 </div>
 
 <div class="tabcontent Kotlin" style="display: block;">
@@ -82,7 +82,7 @@
 
 <div class="tabcontent Swift">
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre></figure>
 
 </div>
 
@@ -90,51 +90,103 @@
 <p>Сходу в голову приходит идея перебрать все возможные суммы и проверить слагаемые на простоту:</p>
 
 <div class="tab">
-<button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
-<button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
 </div>
 
 <div class="tabcontent Kotlin" style="display: block;">
 
 <figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">test</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
-    <span class="p">(</span><span class="m">0</span><span class="o">..</span><span class="n">n</span><span class="p">).</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">number</span> <span class="p">-&gt;</span>
+    <span class="p">(</span><span class="m">1</span><span class="o">..</span><span class="n">n</span><span class="p">).</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">number</span> <span class="p">-&gt;</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="n">number</span><span class="p">))</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="k">true</span>
             <span class="p">}</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="k">false</span>
-    <span class="p">}</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 </div>
 
 <div class="tabcontent Swift">
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">funс</span> <span class="nf">test</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span></code></pre></figure>
 
 </div>
 
 <p>Но, если подумать, зачем перебирать все числа подряд, если числа кратные двум не являются простыми:</p>
 
-<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">  <span class="k">fun</span> <span class="nf">test</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">test</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1</span><span class="o">..</span><span class="n">n</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">true</span>
-      <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">true</span>
+        <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="k">false</span>
-  <span class="p">}</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">funс</span> <span class="nf">test</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
 
 <p>Уже близко! Но, если мы дошли до середины диапазона, то после этого мы уже будем получать числа вида n - i и i, которые мы уже проверили. Значит, можно сократить диапазон проверяемых чисел в два раза! Таким образом, получим такое решение:</p>
 
-<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">  <span class="k">fun</span> <span class="nf">test</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">test</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
     <span class="kd">val</span> <span class="py">last</span> <span class="p">=</span> <span class="n">n</span> <span class="p">/</span> <span class="m">2</span> 
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1</span><span class="o">..</span><span class="n">last</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">true</span>
-      <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">true</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="k">false</span>
-  <span class="p">}</span></code></pre></figure>
+<span class="k">return</span> <span class="k">false</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">funс</span> <span class="nf">test</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">last</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="n">last</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
 
 <h3 id="Что-дальше">Что дальше?</h3>
 <p>Оптимизаций еще много, а что сможете придумать вы? Задачка хорошо показывает интервьюеру то, как вы думаете и можете ли придумать оптимизацию решения предложенной вам задачи. Всегда не забывайте оценить адекватность решения, которое вы предлагаете задачи!</p>
@@ -182,7 +234,7 @@
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Блог проекта Interyou, посвященного прохождению собеседований на позицию мобильного разработчика.</p>
+        <p></p>
       </div>
     </div>
 
