@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-10T02:28:35+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Interyou</title><entry><title type="html">Задача о представлении числа в виде суммы двух простых чисел</title><link href="http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html" rel="alternate" type="text/html" title="Задача о представлении числа в виде суммы двух простых чисел" /><published>2018-11-07T12:00:00+03:00</published><updated>2018-11-07T12:00:00+03:00</updated><id>http://localhost:4000/jekyll/update/2018/11/07/prime-numbers</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html">&lt;h3 id=&quot;Условие&quot;&gt;Условие&lt;/h3&gt;
-&lt;p&gt;Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает   &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;  или   &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;  в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-12T00:42:35+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Interyou</title><entry><title type="html">Задача о представлении числа в виде суммы двух простых чисел</title><link href="http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html" rel="alternate" type="text/html" title="Задача о представлении числа в виде суммы двух простых чисел" /><published>2018-11-07T12:00:00+03:00</published><updated>2018-11-07T12:00:00+03:00</updated><id>http://localhost:4000/jekyll/update/2018/11/07/prime-numbers</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/11/07/prime-numbers.html">&lt;h3 id=&quot;Условие&quot;&gt;Условие&lt;/h3&gt;
+&lt;p&gt;Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает   &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;  или   &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;  в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым, уже реализована:&lt;/p&gt;
 
 &lt;div class=&quot;tab&quot;&gt;
     &lt;button class=&quot;tablinks Kotlin active&quot; style=&quot;margin-left: -1px;&quot; onclick=&quot;openTab(event, 'Kotlin')&quot;&gt;Kotlin&lt;/button&gt;
@@ -52,7 +52,7 @@
 
 &lt;/div&gt;
 
-&lt;p&gt;Но, если подумать, зачем перебирать все числа подряд, если числа кратные двум не являются простыми:&lt;/p&gt;
+&lt;p&gt;Если подумать, зачем перебирать все числа подряд, если числа кратные двум не являются простыми:&lt;/p&gt;
 
 &lt;div class=&quot;tab&quot;&gt;
     &lt;button class=&quot;tablinks Kotlin active&quot; style=&quot;margin-left: -1px;&quot; onclick=&quot;openTab(event, 'Kotlin')&quot;&gt;Kotlin&lt;/button&gt;
@@ -85,7 +85,7 @@
 
 &lt;/div&gt;
 
-&lt;p&gt;Уже близко! Но, если мы дошли до середины диапазона, то после этого мы уже будем получать числа вида n - i и i, которые мы уже проверили. Значит, можно сократить диапазон проверяемых чисел в два раза! Таким образом, получим такое решение:&lt;/p&gt;
+&lt;p&gt;Уже близко! Если мы дошли до середины диапазона, то после этого мы уже будем получать числа вида n - i и i, которые мы уже проверили, значит можно сократить диапазон проверяемых чисел в два раза. Получим следующее решение:&lt;/p&gt;
 
 &lt;div class=&quot;tab&quot;&gt;
     &lt;button class=&quot;tablinks Kotlin active&quot; style=&quot;margin-left: -1px;&quot; onclick=&quot;openTab(event, 'Kotlin')&quot;&gt;Kotlin&lt;/button&gt;
@@ -121,4 +121,7 @@
 &lt;/div&gt;
 
 &lt;h3 id=&quot;Что-дальше&quot;&gt;Что дальше?&lt;/h3&gt;
-&lt;p&gt;Оптимизаций еще много, а что сможете придумать вы? Задачка хорошо показывает интервьюеру то, как вы думаете и можете ли придумать оптимизацию решения предложенной вам задачи. Всегда не забывайте оценить адекватность решения, которое вы предлагаете задачи!&lt;/p&gt;</content><author><name></name></author><summary type="html">Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым уже реализована:</summary></entry></feed>
+&lt;p&gt;Оптимизаций еще много, а что сможете придумать вы? Задачка хорошо показывает интервьюеру то, как вы думаете и можете ли придумать оптимизацию решения предложенной вам задачи. Всегда не забывайте оценить адекватность решения, которое вы предлагаете!&lt;/p&gt;
+
+&lt;h3 id=&quot;ps&quot;&gt;P.S.&lt;/h3&gt;
+&lt;p&gt;Для практики можете также построить алгоритм, который будет принимать на вход 2 целых положительных числа: число, которое нужно разложить на простые слагаемые, и число простых слагаемых, и возвращать   &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;  или   &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;  в зависимости от того, может ли число быть представлено суммой треубемого количества простых чисел. При этом, функция, определяющая является ли число простым, также реализована.&lt;/p&gt;</content><author><name></name></author><summary type="html">Условие Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает true или false в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым, уже реализована:</summary></entry></feed>
