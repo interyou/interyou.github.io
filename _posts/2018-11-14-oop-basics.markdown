@@ -20,7 +20,12 @@ categories: jekyll update
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+// Объявление класса ExampleClass
+class ExampleClass {
+	
+	var myProperty: Int = 0
+
+}
 {% endhighlight %}
 </div>
 
@@ -44,7 +49,10 @@ class ExampleClass {
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+// Создаем экземпляр класса 
+val exampleObject = ExampleClass()
+// Напечатаем переменную myProperty опредленную в классе ExampleClass
+println(exampleObject.myProperty)
 {% endhighlight %}
 </div>
 
@@ -66,7 +74,11 @@ print(object.myProperty)
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+interface MyInterface {
+
+	fun doSomething()
+
+}
 {% endhighlight %}
 </div>
 
@@ -92,7 +104,15 @@ protocol MyInterface {
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+class ExampleClass {
+	
+	var myProperty: Int = 0
+
+	fun doSomething() {
+		println("This function do something")
+	}
+
+}
 {% endhighlight %}
 </div>
 
@@ -121,7 +141,16 @@ class ExampleClass {
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+// Объявление класса Dog. 
+// Пусть, значимые переменные собаки это имя, хозяин, а функция лаять. 
+// Мы понимамаем, что у собаки также есть порода, рост, вес и прочее, но мы опускаем данные характеристики
+class Dog(val name: String, val owner: String) {
+
+	fun bark() {
+		print("WOOF-WOOF-WOOF")
+	}
+
+}
 {% endhighlight %}
 </div>
 
@@ -157,13 +186,47 @@ class Dog {
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean 
+// Объявление интерфейся MyInterface
+interface MyInterface {
+
+	fun doSomething()
+
+}
+
+// Первая реализация интерфейся MyInterface
+class Implementation1: MyInterface {
+	
+	override fun doSomething() {
+		print("Doing something")
+	}
+
+}
+
+// Вторая реализация интерфейся MyInterface
+class Implementation2: MyInterface {
+	
+	override fun doSomething() {
+		print("Doing nothing")
+	}
+
+}
+
+// Объявим перменную, которая будет иметь тип MyInterface
+val exampleObject: MyInterface
+
+// Тогда мы можем присвоить данной переменной как объект класс Implementation1, так и класс Implementation2.
+// Причем обращаемся мы к ним через интерфейс MyInterface.
+exampleObject = Implementation1()
+exampleObject.doSomething() // Doing something
+
+exampleObject = Implementation2()
+exampleObject.doSomething() // Doing nothing
 {% endhighlight %}
 </div>
 
 <div class="tabcontent Swift">
 {% highlight swift %}
-// Объявление интерфейся MyInterface
+// Объявление интерфейса MyInterface
 protocol MyInterface {
 
 	func doSomething()
@@ -211,7 +274,23 @@ object.doSomething() // Doing nothing
 
 <div class="tabcontent Kotlin" style="display: block;">
 {% highlight kotlin %}
-fun isPrime(n: Int): Boolean к
+// Объявление класса ExampleClass
+class ParentClass {
+	
+	var myProperty: Int = 0
+
+}
+
+// Создаем класс ChildClass потомка ParentClass
+class ChildClass: ParentClass {
+	
+	var anotherProperty: Int = 1
+
+}
+
+val child = ChildClass()
+// Нам доступны параметры класс предка
+println(child.myProperty) // 0
 {% endhighlight %}
 </div>
 
@@ -233,7 +312,7 @@ class ChildClass: ParentClass {
 
 let child = ChildClass()
 // Нам доступны параметры класс предка
-print(ChildClass.anotherProperty) // 1
+print(child.myProperty) // 0
 {% endhighlight %}
 </div>
 
