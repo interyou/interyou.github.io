@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-20T17:29:13+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Interyou</title><entry><title type="html">Основы ООП</title><link href="http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html" rel="alternate" type="text/html" title="Основы ООП" /><published>2018-11-14T15:00:00+03:00</published><updated>2018-11-14T15:00:00+03:00</updated><id>http://localhost:4000/jekyll/update/2018/11/14/oop-basics</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html">&lt;p&gt;Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="interyou.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="interyou.github.io/" rel="alternate" type="text/html" /><updated>2018-11-20T20:05:56+03:00</updated><id>interyou.github.io/feed.xml</id><title type="html">Interyou</title><entry><title type="html">Задача про броски яйца с небоскреба</title><link href="interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html" rel="alternate" type="text/html" title="Задача про броски яйца с небоскреба" /><published>2018-11-20T20:00:00+03:00</published><updated>2018-11-20T20:00:00+03:00</updated><id>interyou.github.io/jekyll/update/2018/11/20/max-egg-throws</id><content type="html" xml:base="interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html">&lt;h2 id=&quot;Условие&quot;&gt;Условие&lt;/h2&gt;
+&lt;p&gt;Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий.&lt;/p&gt;
+
+&lt;h2 id=&quot;Решение&quot;&gt;Решение&lt;/h2&gt;
+
+&lt;p&gt;Для начала стоит сделать несколько важных утверждений:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Эффект падения одинаков для всех яиц.&lt;/li&gt;
+  &lt;li&gt;Если при падении с конкретного этажа яйцо не разбивается, то оно не разобьется и при падении с более низких этажей.&lt;/li&gt;
+  &lt;li&gt;Наоборот, если яйцо разбивается при падении, то оно разобьется и при падении с более высокого этажа.&lt;/li&gt;
+  &lt;li&gt;Если яйцо не разбилось, его можно использовать снова.&lt;/li&gt;
+  &lt;li&gt;Разбитое яйцо нужно исключить.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;Простое-решение&quot;&gt;Простое решение&lt;/h3&gt;
+
+&lt;p&gt;Теперь пойдем от простого к сложному. Самый надежный способ найти этаж, начиная с которого разбивается яйцо, это начать бросать с 1го этажа, но в худшем случае нам придется бросить яйцо сто раз. К тому же имеется два яйца, а используем мы одно. Как поступим? Пусть первое яйцо будет разбивать сто этажей на более мелкие отрезки как можно эффективнее. В данных отрезках мы будем бросать яйца с верхней до нижней границы.&lt;/p&gt;
+
+&lt;p&gt;Пусть первое яйцо разбивает на 2 отрезка. Тогда первое яйцо нужно бросить с 1/n этажа, например, 1/2. Тогда алгоритм будет выглядеть так:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Бросаем яйцо с 50 этажа. Если оно разбивается, проверяем первые 49 этажей вторым яйцом.&lt;/li&gt;
+  &lt;li&gt;Если оно не разбивается, бросаем яйцо с 50 + (50 * 1/2) = 75 этажа. Если разбивается, проверяем этажи 51–74 вторым яйцом.&lt;/li&gt;
+  &lt;li&gt;…
+В худшем случае для 1/2 (50, 26,…) — это 50. Так мы можем найти идеальный n, который оптимизирует количество бросков при помощи динамического программирования. Получим, что n равен 5, а наихудшее количество бросков равно 22. Но, данное решение не является оптимальным.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;Оптимальное-решение&quot;&gt;Оптимальное решение&lt;/h3&gt;
+
+&lt;p&gt;Чтобы найти оптимальное решение, давайте напишем формула вычисления количества бросков в худшем случае:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;max(F_{1},(F_{2}-F_{1}-1)+1,(F_{3}-F_{2}-1)+2,...)&lt;/script&gt;
+
+&lt;p&gt;где &lt;script type=&quot;math/tex&quot;&gt;F(n)&lt;/script&gt; - это следующий этаж, с которого мы бросаем первое яйцо. Очевидно, что имеем оптимальное решение, когда все переменные данной функции равны.&lt;/p&gt;
+
+&lt;p&gt;В таком случае предположим, что &lt;script type=&quot;math/tex&quot;&gt;F_{1}&lt;/script&gt; - максимум, тогда &lt;script type=&quot;math/tex&quot;&gt;F_{2} = F_{1} + (F_{1} - 1)&lt;/script&gt;, или &lt;script type=&quot;math/tex&quot;&gt;F_{k} = F{k-1} + (F_{1} - (k - 1))&lt;/script&gt;. Если разница между границами отрезков будет определяться по другому, то найдется ситуция, когда придется совершить больше бросков, чем &lt;script type=&quot;math/tex&quot;&gt;F_{1}&lt;/script&gt;. Тогда, исходя из вышеперечисленного получим, что если максимум бросков равен m, то должно выполняться &lt;script type=&quot;math/tex&quot;&gt;F_{1} + (F_{1} - 1) + (F_{1} - 2) + ... + (F_{1} - l) = 100&lt;/script&gt; и &lt;script type=&quot;math/tex&quot;&gt;F_{1} - l = 1&lt;/script&gt;. Тогда перепишем и получим:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;l(l-1) - \frac{l(l+1)}{2} = 100&lt;/script&gt;
+
+&lt;p&gt;Решая данное уравнение получим, что l = 14. Проверим и получим ряд: 14, 27, 39, 50, 60, 69, 77, 84, 90, 95, 99, 100.&lt;/p&gt;
+
+&lt;p&gt;Предположим, что можем проверить за 13 бросков. Тогда получим следующий ряд: 13, 25, 36, 46, 55, 63, 70, 76, 81, 85, 88, 90, 91. Дальше нам уже потребуется больше 13 бросков для проверки, значит за 13 не получится.&lt;/p&gt;
+
+&lt;p&gt;Всем спасибо! До следующего раза :)&lt;/p&gt;
+
+&lt;h3 id=&quot;ps&quot;&gt;P.S.&lt;/h3&gt;
+&lt;p&gt;Можно поупражняться и попробовать написать код, который решает данную задачу для любого количества этажей.&lt;/p&gt;</content><author><name></name></author><summary type="html">Условие Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий.</summary></entry><entry><title type="html">Основы ООП</title><link href="interyou.github.io/jekyll/update/2018/11/14/oop-basics.html" rel="alternate" type="text/html" title="Основы ООП" /><published>2018-11-14T15:00:00+03:00</published><updated>2018-11-14T15:00:00+03:00</updated><id>interyou.github.io/jekyll/update/2018/11/14/oop-basics</id><content type="html" xml:base="interyou.github.io/jekyll/update/2018/11/14/oop-basics.html">&lt;p&gt;Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.&lt;/p&gt;
 
 &lt;h3 id=&quot;Что-такое-ООП&quot;&gt;Что такое ООП?&lt;/h3&gt;
 &lt;p&gt;ООП - (Объектно Ориентированное Программирование) методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определённого класса, а классы образуют иерархию наследования.&lt;/p&gt;
@@ -310,7 +355,7 @@
 
 &lt;/div&gt;
 
-&lt;p&gt;На этом все. До пятницы!&lt;/p&gt;</content><author><name></name></author><summary type="html">Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.</summary></entry><entry><title type="html">Задача о представлении числа в виде суммы двух простых чисел</title><link href="http://localhost:4000/jekyll/update/2018/11/12/prime-numbers.html" rel="alternate" type="text/html" title="Задача о представлении числа в виде суммы двух простых чисел" /><published>2018-11-12T15:00:00+03:00</published><updated>2018-11-12T15:00:00+03:00</updated><id>http://localhost:4000/jekyll/update/2018/11/12/prime-numbers</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/11/12/prime-numbers.html">&lt;h3 id=&quot;Условие&quot;&gt;Условие&lt;/h3&gt;
+&lt;p&gt;На этом все. До пятницы!&lt;/p&gt;</content><author><name></name></author><summary type="html">Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.</summary></entry><entry><title type="html">Задача о представлении числа в виде суммы двух простых чисел</title><link href="interyou.github.io/jekyll/update/2018/11/12/prime-numbers.html" rel="alternate" type="text/html" title="Задача о представлении числа в виде суммы двух простых чисел" /><published>2018-11-12T15:00:00+03:00</published><updated>2018-11-12T15:00:00+03:00</updated><id>interyou.github.io/jekyll/update/2018/11/12/prime-numbers</id><content type="html" xml:base="interyou.github.io/jekyll/update/2018/11/12/prime-numbers.html">&lt;h3 id=&quot;Условие&quot;&gt;Условие&lt;/h3&gt;
 &lt;p&gt;Необходимо реализовать функцию, которая принимает на вход целое положительное число, и возвращает   &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;  или   &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;  в зависимости от того, может ли число быть представлено суммой двух простых чисел. При этом, функция, определяющая является ли число простым, уже реализована:&lt;/p&gt;
 
 &lt;div class=&quot;tab&quot;&gt;

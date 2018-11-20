@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Задача про броски яйца с небоскреба | Interyou</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Задача про броски яйца с небоскреба" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Условие Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий." />
+<meta property="og:description" content="Условие Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий." />
+<link rel="canonical" href="interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html" />
+<meta property="og:url" content="interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html" />
+<meta property="og:site_name" content="Interyou" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-20T20:00:00+03:00" />
+<script type="application/ld+json">
+{"description":"Условие Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий.","@type":"BlogPosting","url":"interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html","headline":"Задача про броски яйца с небоскреба","dateModified":"2018-11-20T20:00:00+03:00","datePublished":"2018-11-20T20:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"interyou.github.io/jekyll/update/2018/11/20/max-egg-throws.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="interyou.github.io/feed.xml" title="Interyou" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="InterYou"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Interyou</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">О проекте</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">Задача про броски яйца с небоскреба</h1>
+        <p class="post-meta">
+        <time class="dt-published" datetime="2018-11-20T20:00:00+03:00" itemprop="datePublished">Nov 20, 2018
+        </time></p>
+    </header>
+    
+    <div class="post-content e-content" itemprop="articleBody">
+        <h2 id="Условие">Условие</h2>
+<p>Представим, что вы живете в 100-этажном небоскребе и у вас есть два одинаковых яйца. Вам нужно определить самый высокий этаж, с которого можно бросить яйцо и не разбить его. Найдите алгоритм, который минимизирует количество бросков в худшем сценарии развития событий.</p>
+
+<h2 id="Решение">Решение</h2>
+
+<p>Для начала стоит сделать несколько важных утверждений:</p>
+<ul>
+  <li>Эффект падения одинаков для всех яиц.</li>
+  <li>Если при падении с конкретного этажа яйцо не разбивается, то оно не разобьется и при падении с более низких этажей.</li>
+  <li>Наоборот, если яйцо разбивается при падении, то оно разобьется и при падении с более высокого этажа.</li>
+  <li>Если яйцо не разбилось, его можно использовать снова.</li>
+  <li>Разбитое яйцо нужно исключить.</li>
+</ul>
+
+<h3 id="Простое-решение">Простое решение</h3>
+
+<p>Теперь пойдем от простого к сложному. Самый надежный способ найти этаж, начиная с которого разбивается яйцо, это начать бросать с 1го этажа, но в худшем случае нам придется бросить яйцо сто раз. К тому же имеется два яйца, а используем мы одно. Как поступим? Пусть первое яйцо будет разбивать сто этажей на более мелкие отрезки как можно эффективнее. В данных отрезках мы будем бросать яйца с верхней до нижней границы.</p>
+
+<p>Пусть первое яйцо разбивает на 2 отрезка. Тогда первое яйцо нужно бросить с 1/n этажа, например, 1/2. Тогда алгоритм будет выглядеть так:</p>
+<ul>
+  <li>Бросаем яйцо с 50 этажа. Если оно разбивается, проверяем первые 49 этажей вторым яйцом.</li>
+  <li>Если оно не разбивается, бросаем яйцо с 50 + (50 * 1/2) = 75 этажа. Если разбивается, проверяем этажи 51–74 вторым яйцом.</li>
+  <li>…
+В худшем случае для 1/2 (50, 26,…) — это 50. Так мы можем найти идеальный n, который оптимизирует количество бросков при помощи динамического программирования. Получим, что n равен 5, а наихудшее количество бросков равно 22. Но, данное решение не является оптимальным.</li>
+</ul>
+
+<h3 id="Оптимальное-решение">Оптимальное решение</h3>
+
+<p>Чтобы найти оптимальное решение, давайте напишем формула вычисления количества бросков в худшем случае:</p>
+
+<script type="math/tex; mode=display">max(F_{1},(F_{2}-F_{1}-1)+1,(F_{3}-F_{2}-1)+2,...)</script>
+
+<p>где <script type="math/tex">F(n)</script> - это следующий этаж, с которого мы бросаем первое яйцо. Очевидно, что имеем оптимальное решение, когда все переменные данной функции равны.</p>
+
+<p>В таком случае предположим, что <script type="math/tex">F_{1}</script> - максимум, тогда <script type="math/tex">F_{2} = F_{1} + (F_{1} - 1)</script>, или <script type="math/tex">F_{k} = F{k-1} + (F_{1} - (k - 1))</script>. Если разница между границами отрезков будет определяться по другому, то найдется ситуция, когда придется совершить больше бросков, чем <script type="math/tex">F_{1}</script>. Тогда, исходя из вышеперечисленного получим, что если максимум бросков равен m, то должно выполняться <script type="math/tex">F_{1} + (F_{1} - 1) + (F_{1} - 2) + ... + (F_{1} - l) = 100</script> и <script type="math/tex">F_{1} - l = 1</script>. Тогда перепишем и получим:</p>
+
+<script type="math/tex; mode=display">l(l-1) - \frac{l(l+1)}{2} = 100</script>
+
+<p>Решая данное уравнение получим, что l = 14. Проверим и получим ряд: 14, 27, 39, 50, 60, 69, 77, 84, 90, 95, 99, 100.</p>
+
+<p>Предположим, что можем проверить за 13 бросков. Тогда получим следующий ряд: 13, 25, 36, 46, 55, 63, 70, 76, 81, 85, 88, 90, 91. Дальше нам уже потребуется больше 13 бросков для проверки, значит за 13 не получится.</p>
+
+<p>Всем спасибо! До следующего раза :)</p>
+
+<h3 id="ps">P.S.</h3>
+<p>Можно поупражняться и попробовать написать код, который решает данную задачу для любого количества этажей.</p>
+
+
+    </div><a class="u-url" href="/jekyll/update/2018/11/20/max-egg-throws.html" hidden></a>
+</article>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        activeTabcontents = document.getElementsByClassName("tabcontent " + tabName);
+        for (i = 0; i < activeTabcontents.length; i++) {
+            activeTabcontents[i].style.display = "block"
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        activeTablinks = document.getElementsByClassName("tablinks " + tabName);
+        for (i = 0; i < activeTablinks.length; i++) {
+            activeTablinks[i].className += " active"
+        }
+    }
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Interyou</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Interyou</li><li><a class="u-email" href="mailto:interyou.info@gmail.com">interyou.info@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/interyou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">interyou</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
