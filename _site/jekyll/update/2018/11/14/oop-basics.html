@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Основы ООП | Interyou</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Основы ООП" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код." />
+<meta property="og:description" content="Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код." />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html" />
+<meta property="og:site_name" content="Interyou" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-14T15:00:00+03:00" />
+<script type="application/ld+json">
+{"description":"Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html","headline":"Основы ООП","dateModified":"2018-11-14T15:00:00+03:00","datePublished":"2018-11-14T15:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2018/11/14/oop-basics.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Interyou" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="InterYou"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Interyou</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">О проекте</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">Основы ООП</h1>
+        <p class="post-meta">
+        <time class="dt-published" datetime="2018-11-14T15:00:00+03:00" itemprop="datePublished">Nov 14, 2018
+        </time></p>
+    </header>
+    
+    <div class="post-content e-content" itemprop="articleBody">
+        <p>Сегодня речь пойдет об одном из базовых приниципов в программировании - ООП. Swift и Kotlin принадлежат семейству ООП языков. Поэтому крайне важно хорошо знать базовые понятия, чтобы писать легко поддерживаемый и расширяемый код.</p>
+
+<h3 id="Что-такое-ООП">Что такое ООП?</h3>
+<p>ООП - (Объектно Ориентированное Программирование) методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определённого класса, а классы образуют иерархию наследования.</p>
+
+<h3 id="Основные-понятия">Основные понятия</h3>
+
+<h4 id="Класс">Класс</h4>
+<p>Класс - это способ описания сущности, определяющий состояние и поведение, зависящее от этого состояния, а также правила для взаимодействия с данной сущностью (контракт).</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// Объявление класса ExampleClass</span>
+<span class="kd">class</span> <span class="nc">ExampleClass</span> <span class="p">{</span>
+	
+	<span class="kd">var</span> <span class="py">myProperty</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление класса ExampleClass</span>
+<span class="kd">class</span> <span class="kt">ExampleClass</span> <span class="p">{</span>
+	
+	<span class="k">var</span> <span class="nv">myProperty</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<h4 id="Объект">Объект</h4>
+<p>Объект (экземпляр) – это отдельный представитель класса, имеющий конкретное состояние и поведение, полностью определяемое классом.</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// Создаем экземпляр класса </span>
+<span class="kd">val</span> <span class="py">exampleObject</span> <span class="p">=</span> <span class="n">ExampleClass</span><span class="p">()</span>
+<span class="c1">// Напечатаем переменную myProperty опредленную в классе ExampleClass</span>
+<span class="n">println</span><span class="p">(</span><span class="n">exampleObject</span><span class="p">.</span><span class="n">myProperty</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Создаем экземпляр класса </span>
+<span class="k">let</span> <span class="nv">object</span> <span class="o">=</span> <span class="kt">ExampleClass</span><span class="p">()</span>
+<span class="c1">// Напечатаем переменную myProperty опредленную в классе ExampleClass</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">object</span><span class="o">.</span><span class="n">myProperty</span><span class="p">)</span></code></pre></figure>
+
+</div>
+
+<h4 id="Интерфейс">Интерфейс</h4>
+<p>Интерфейс – это набор методов класса, доступных для использования другими классами.</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">interface</span> <span class="nc">MyInterface</span> <span class="p">{</span>
+
+	<span class="k">fun</span> <span class="nf">doSomething</span><span class="p">()</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление интерфейся MyInterface</span>
+<span class="kd">protocol</span> <span class="kt">MyInterface</span> <span class="p">{</span>
+
+	<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<h3 id="Основные-принципы">Основные принципы</h3>
+
+<h4 id="Инкапсуляция">Инкапсуляция</h4>
+<p>Инкапсуляция – это свойство системы, позволяющее объединить данные и методы, работающие с ними, в классе и скрыть детали реализации от пользователя.</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">class</span> <span class="nc">ExampleClass</span> <span class="p">{</span>
+	
+	<span class="kd">var</span> <span class="py">myProperty</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
+
+	<span class="k">fun</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">println</span><span class="p">(</span><span class="s">"This function do something"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление класса ExampleClass. </span>
+<span class="c1">// Переменная myProperty и функция doSomething инкапсулированы в классе ExampleClass.</span>
+<span class="kd">class</span> <span class="kt">ExampleClass</span> <span class="p">{</span>
+	
+	<span class="k">var</span> <span class="nv">myProperty</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"This function do something"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<h4 id="Абстрагирование">Абстрагирование</h4>
+<p>Абстрагирование – это способ выделить набор значимых характеристик объекта, исключая из рассмотрения незначимые. Соответственно, абстракция – это набор всех таких характеристик.</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// Объявление класса Dog. </span>
+<span class="c1">// Пусть, значимые переменные собаки это имя, хозяин, а функция лаять. </span>
+<span class="c1">// Мы понимамаем, что у собаки также есть порода, рост, вес и прочее, но мы опускаем данные характеристики</span>
+<span class="kd">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">owner</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="k">fun</span> <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">"WOOF-WOOF-WOOF"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление класса Dog. </span>
+<span class="c1">// Пусть, значимые переменные собаки это имя, хозяин, а функция лаять. </span>
+<span class="c1">// Мы понимамаем, что у собаки также есть порода, рост, вес и прочее, но мы опускаем данные характеристики</span>
+<span class="kd">class</span> <span class="kt">Dog</span> <span class="p">{</span>
+	
+	<span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+	<span class="k">var</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span>
+
+	<span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">owner</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="k">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+	<span class="p">}</span>
+
+	<span class="kd">func</span> <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"WOOF-WOOF-WOOF"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<h4 id="Полиморфизм">Полиморфизм</h4>
+<p>Полиморфизм – это свойство системы использовать объекты с одинаковым интерфейсом без информации о типе и внутренней структуре объекта.</p>
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// Объявление интерфейся MyInterface</span>
+<span class="kd">interface</span> <span class="nc">MyInterface</span> <span class="p">{</span>
+
+	<span class="k">fun</span> <span class="nf">doSomething</span><span class="p">()</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Первая реализация интерфейся MyInterface</span>
+<span class="kd">class</span> <span class="nc">Implementation1</span><span class="p">:</span> <span class="n">MyInterface</span> <span class="p">{</span>
+	
+	<span class="k">override</span> <span class="k">fun</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">"Doing something"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Вторая реализация интерфейся MyInterface</span>
+<span class="kd">class</span> <span class="nc">Implementation2</span><span class="p">:</span> <span class="n">MyInterface</span> <span class="p">{</span>
+	
+	<span class="k">override</span> <span class="k">fun</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">"Doing nothing"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Объявим перменную, которая будет иметь тип MyInterface</span>
+<span class="kd">val</span> <span class="py">exampleObject</span><span class="p">:</span> <span class="n">MyInterface</span>
+
+<span class="c1">// Тогда мы можем присвоить данной переменной как объект класс Implementation1, так и класс Implementation2.</span>
+<span class="c1">// Причем обращаемся мы к ним через интерфейс MyInterface.</span>
+<span class="n">exampleObject</span> <span class="p">=</span> <span class="n">Implementation1</span><span class="p">()</span>
+<span class="n">exampleObject</span><span class="p">.</span><span class="n">doSomething</span><span class="p">()</span> <span class="c1">// Doing something</span>
+
+<span class="n">exampleObject</span> <span class="p">=</span> <span class="n">Implementation2</span><span class="p">()</span>
+<span class="n">exampleObject</span><span class="p">.</span><span class="n">doSomething</span><span class="p">()</span> <span class="c1">// Doing nothing</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление интерфейса MyInterface</span>
+<span class="kd">protocol</span> <span class="kt">MyInterface</span> <span class="p">{</span>
+
+	<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Первая реализация интерфейся MyInterface</span>
+<span class="kd">class</span> <span class="kt">Implementation1</span><span class="p">:</span> <span class="kt">MyInterface</span> <span class="p">{</span>
+	
+	<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"Doing something"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Вторая реализация интерфейся MyInterface</span>
+<span class="kd">class</span> <span class="kt">Implementation2</span><span class="p">:</span> <span class="kt">MyInterface</span> <span class="p">{</span>
+	
+	<span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">"Doing nothing"</span><span class="p">)</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Объявим перменную, которая будет иметь тип MyInterface</span>
+<span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">MyInterface</span>
+
+<span class="c1">// Тогда мы можем присвоить данной переменной как объект класс Implementation1, так и класс Implementation2.</span>
+<span class="c1">// Причем обращаемся мы к ним через интерфейс MyInterface.</span>
+<span class="n">object</span> <span class="o">=</span> <span class="kt">Implementation1</span><span class="p">()</span>
+<span class="n">object</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span> <span class="c1">// Doing something</span>
+
+<span class="n">object</span> <span class="o">=</span> <span class="kt">Implementation2</span><span class="p">()</span>
+<span class="n">object</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span> <span class="c1">// Doing nothing</span></code></pre></figure>
+
+</div>
+
+<h4 id="Наследование">Наследование</h4>
+<p>Наследование – это свойство системы, позволяющее описать новый класс на основе уже существующего с частично или полностью заимствующейся функциональностью. Класс, от которого производится наследование, называется базовым или родительским. Новый класс – потомком, наследником или производным классом.</p>
+
+<div class="tab">
+    <button class="tablinks Kotlin active" style="margin-left: -1px;" onclick="openTab(event, 'Kotlin')">Kotlin</button>
+    <button class="tablinks Swift" onclick="openTab(event, 'Swift')">Swift</button>
+</div>
+
+<div class="tabcontent Kotlin" style="display: block;">
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// Объявление класса ExampleClass</span>
+<span class="kd">class</span> <span class="nc">ParentClass</span> <span class="p">{</span>
+	
+	<span class="kd">var</span> <span class="py">myProperty</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Создаем класс ChildClass потомка ParentClass</span>
+<span class="kd">class</span> <span class="nc">ChildClass</span><span class="p">:</span> <span class="n">ParentClass</span> <span class="p">{</span>
+	
+	<span class="kd">var</span> <span class="py">anotherProperty</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
+
+<span class="p">}</span>
+
+<span class="kd">val</span> <span class="py">child</span> <span class="p">=</span> <span class="n">ChildClass</span><span class="p">()</span>
+<span class="c1">// Нам доступны параметры класс предка</span>
+<span class="n">println</span><span class="p">(</span><span class="n">child</span><span class="p">.</span><span class="n">myProperty</span><span class="p">)</span> <span class="c1">// 0</span></code></pre></figure>
+
+</div>
+
+<div class="tabcontent Swift">
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Объявление класса ExampleClass</span>
+<span class="kd">class</span> <span class="kt">ParentClass</span> <span class="p">{</span>
+	
+	<span class="k">var</span> <span class="nv">myProperty</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Создаем класс ChildClass потомка ParentClass</span>
+<span class="kd">class</span> <span class="kt">ChildClass</span><span class="p">:</span> <span class="kt">ParentClass</span> <span class="p">{</span>
+	
+	<span class="k">var</span> <span class="nv">anotherProperty</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">child</span> <span class="o">=</span> <span class="kt">ChildClass</span><span class="p">()</span>
+<span class="c1">// Нам доступны параметры класс предка</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">myProperty</span><span class="p">)</span> <span class="c1">// 0</span></code></pre></figure>
+
+</div>
+
+<p>На этом все. До пятницы!</p>
+
+    </div><a class="u-url" href="/jekyll/update/2018/11/14/oop-basics.html" hidden></a>
+</article>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        activeTabcontents = document.getElementsByClassName("tabcontent " + tabName);
+        for (i = 0; i < activeTabcontents.length; i++) {
+            activeTabcontents[i].style.display = "block"
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        activeTablinks = document.getElementsByClassName("tablinks " + tabName);
+        for (i = 0; i < activeTablinks.length; i++) {
+            activeTablinks[i].className += " active"
+        }
+    }
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Interyou</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Interyou</li><li><a class="u-email" href="mailto:interyou.info@gmail.com">interyou.info@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/interyou"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">interyou</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
